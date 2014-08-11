@@ -43,7 +43,7 @@
     NSArray *resultsADH = [queryADH findObjects];
     PFObject *resultADH = [resultsADH objectAtIndex:0];
     float ADHActiviteiten = [[resultADH objectForKey:@"hoeveelheid"] floatValue];
-    float waarde = (self.calorien/ADHActiviteiten)*100;
+    float waarde = (self.duur/ADHActiviteiten)*100;
     NSString *gebruikt = [[NSString stringWithFormat:@"%.2f", waarde]stringByReplacingOccurrencesOfString:@"." withString:@","];
     if(waarde > 100) {
         gebruikt = @"100,00";

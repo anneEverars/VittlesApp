@@ -12,6 +12,7 @@
 @interface ActiviteitenItemViewController : UIViewController
 
 @property float calorien;
+@property float duur;
 
 @property (strong, nonatomic) IBOutlet UILabel *hoeveelheid;
 

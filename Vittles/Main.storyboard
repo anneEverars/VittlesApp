@@ -658,19 +658,19 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="39CC2132-4B55-4E24-B2A8-BC3321C83501" translatesAutoresizingMaskIntoConstraints="NO" id="9wL-vO-4Ym">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="E844A863-905A-4549-80F9-560100792FBE" translatesAutoresizingMaskIntoConstraints="NO" id="9wL-vO-4Ym">
                                 <rect key="frame" x="769" y="541" width="3" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="39CC2132-4B55-4E24-B2A8-BC3321C83501" translatesAutoresizingMaskIntoConstraints="NO" id="OFR-KF-0GE">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="E844A863-905A-4549-80F9-560100792FBE" translatesAutoresizingMaskIntoConstraints="NO" id="OFR-KF-0GE">
                                 <rect key="frame" x="814" y="541" width="3" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="39CC2132-4B55-4E24-B2A8-BC3321C83501" translatesAutoresizingMaskIntoConstraints="NO" id="D1g-f3-K4d">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="E844A863-905A-4549-80F9-560100792FBE" translatesAutoresizingMaskIntoConstraints="NO" id="D1g-f3-K4d">
                                 <rect key="frame" x="641" y="541" width="3" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="39CC2132-4B55-4E24-B2A8-BC3321C83501" translatesAutoresizingMaskIntoConstraints="NO" id="v9x-6Y-oFr">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="E844A863-905A-4549-80F9-560100792FBE" translatesAutoresizingMaskIntoConstraints="NO" id="v9x-6Y-oFr">
                                 <rect key="frame" x="985" y="541" width="3" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -2222,7 +2222,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <rect key="frame" x="0.0" y="65" width="768" height="959"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <string key="text">Deze applicatie is ontwikkeld in het kader van een masterproef rond 'Quantified Self voor de persoonlijke gezondheid' voor het behalen van het diploma Master in de ingenieurswetenschappen: Computerwetenschappen met optie mens-machine communicatie. De applicatie zelf is gericht op mensen die gewicht wensen te verliezen. Echter, de onderliggende basis is een 'quantified self' systeem. Dit betekent dat het zoveel mogelijk de bedoeling is om de gebruiker zelf tot conclusies te laten komen omtrent positieve of negatieve gedragingen e.d.                                                                                                                                                                  </string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -3216,7 +3216,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <rect key="frame" x="650" y="200" width="265" height="264"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pyd-fz-iPL">
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pyd-fz-iPL">
                                         <rect key="frame" x="0.0" y="0.0" width="265" height="264"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button" image="progressCircle.png">
@@ -4251,7 +4251,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="achtergrond.png" translatesAutoresizingMaskIntoConstraints="NO" id="fyR-h2-K3B">
-                                <rect key="frame" x="0.0" y="20" width="1024" height="768"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbh-fk-TMe">
@@ -4300,6 +4300,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="aanmeldknop" destination="hbh-fk-TMe" id="TnK-hu-GPJ"/>
+                        <outlet property="hebalaccount" destination="4Ly-Pz-zvO" id="jFm-Jx-exm"/>
+                        <outlet property="hebgeenaccount" destination="4SH-Ol-uJ6" id="pMc-FL-Fhb"/>
+                        <outlet property="registreerknop" destination="ZRE-I4-mj8" id="Bad-eT-XEe"/>
                         <segue destination="87l-NL-J01" kind="modal" identifier="geenLogin" id="JfJ-Tg-4Kp"/>
                     </connections>
                 </viewController>
@@ -4417,7 +4421,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <rect key="frame" x="20" y="124" width="984" height="88"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">Welkom bij Vittles! Deze applicatie is ontwikkeld in het kader van een masterproef rond 'Quantified Self voor de persoonlijke gezondheid' voor het behalen van het diploma Master in de ingenieurswetenschappen: Computermachine met optie mens-machine communicatie. De applicatie zelf is gericht op mensen die gewicht wensen te verliezen. Echter, de onderliggende basis is een 'quantified self' systeem. Dit betekent dat het zoveel mogelijk de bedoeling is om de gebruiker zelf tot conclusies te laten komen omtrent positieve of negatieve gedragingen e.d.                                                                                                                                                                  </string>
+                                <string key="text">Welkom bij Vittles! Deze applicatie is ontwikkeld in het kader van een masterproef rond 'Quantified Self voor de persoonlijke gezondheid' voor het behalen van het diploma Master in de ingenieurswetenschappen: Computerwetenschappen met optie mens-machine communicatie. De applicatie zelf is gericht op mensen die gewicht wensen te verliezen. Echter, de onderliggende basis is een 'quantified self' systeem. Dit betekent dat het zoveel mogelijk de bedoeling is om de gebruiker zelf tot conclusies te laten komen omtrent positieve of negatieve gedragingen e.d.                                                                                                                                                                  </string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardAppearance="light"/>
                             </textView>
@@ -5802,7 +5806,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </scenes>
     <resources>
         <image name="20100627230949!Goal_icon.png" width="25" height="25"/>
-        <image name="39CC2132-4B55-4E24-B2A8-BC3321C83501" width="10" height="80">
+        <image name="Badges.png" width="25" height="25"/>
+        <image name="Challenge.png" width="25" height="25"/>
+        <image name="E844A863-905A-4549-80F9-560100792FBE" width="10" height="80">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISksLzU4VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
@@ -5925,8 +5931,6 @@ AKIApACmAKgArQDEAMYAyBpaGl8aahpzGoYaihqdGqgasRq2Gr4awRrGGtUa2RrgGuga9Rr6Gvwa/hsD
 GwsbDhsTGxsbHhswGzMbOAAAAAAAAAIBAAAAAAAAAD8AAAAAAAAAAAAAAAAAABs6A
 </mutableData>
         </image>
-        <image name="Badges.png" width="25" height="25"/>
-        <image name="Challenge.png" width="25" height="25"/>
         <image name="Fruit2.png" width="500" height="500"/>
         <image name="Lala.png" width="795" height="43"/>
         <image name="Milk.png" width="500" height="500"/>

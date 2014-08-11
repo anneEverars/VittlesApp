@@ -18,6 +18,10 @@
     BOOL tijdChecked;
     NSString *login;
     float verschil;
+    BOOL everenteredTaille;
+    BOOL everenteredHeupen;
+    NSNumber *heupen;
+    NSNumber *taille;
 }
 
 @end
@@ -46,6 +50,8 @@
     login = [login stringByReplacingOccurrencesOfString: @" " withString:@"_"];
     [self.resultaat setHidden:TRUE];
     [self.ditBetekent setHidden:TRUE];
+    everenteredHeupen = NO;
+    everenteredTaille = NO;
     //****PICKERS****
     NSMutableArray *array = [[NSMutableArray alloc] init];
 	for (int i = 0; i < 100; i++){
@@ -77,6 +83,7 @@
     PFQuery *queryGewicht = [PFQuery queryWithClassName:login];
     [queryGewicht whereKey:@"type" equalTo:@"profiel"];
     [queryGewicht whereKey:@"Naam" equalTo:@"gewicht"];
+    [queryGewicht orderByDescending:@"updatedAt"];
     NSArray *results = [queryGewicht findObjects];
     PFObject *object = [results objectAtIndex:0];
     float gewicht = [[object objectForKey:@"hoeveelheid"] floatValue];
@@ -220,8 +227,8 @@
     NSArray *results = [queryGewicht findObjects];
     PFObject *object = [results objectAtIndex:0];
     float aantalNu = [[object objectForKey:@"hoeveelheid"] floatValue];
-    verschil = aantalNu - aantalDoel;
-    doel[@"hoeveelheid"] = [NSNumber numberWithFloat:verschil];
+    verschil = aantalNu -aantalDoel;
+    doel[@"hoeveelheid"] = [NSNumber numberWithFloat:aantalDoel];
     if(tijdChecked) {
         NSInteger seconden = [self.tijdWeken selectedRowInComponent:0]*604800+[self.tijdDagen selectedRowInComponent:0]*86400;
         NSDate *tegen = [[NSDate date]dateByAddingTimeInterval:seconden];
@@ -270,8 +277,23 @@
     [queryGewicht whereKey:@"type" equalTo:@"profiel"];
     [queryGewicht whereKey:@"Naam" equalTo:@"heupen"];
     NSArray *results = [queryGewicht findObjects];
-    PFObject *object = [results objectAtIndex:0];
-    float gewicht = [[object objectForKey:@"hoeveelheid"] floatValue];
+    float gewicht = 0.0f;
+    if ([results count]>0) {
+        PFObject *object = [results objectAtIndex:0];
+        gewicht = [[object objectForKey:@"hoeveelheid"] floatValue];
+        everenteredHeupen = YES;
+    }
+    else {
+        UIAlertView* dialog = [[UIAlertView alloc] init];
+        [dialog setDelegate:self];
+        [dialog setMessage:@"Geef je heupomtrek in om verder te gaan"];
+        [dialog addButtonWithTitle:@"Cancel"];
+        [dialog setCancelButtonIndex:0];
+        [dialog addButtonWithTitle:@"OK"];
+        dialog.tag = 5;
+        dialog.alertViewStyle = UIAlertViewStylePlainTextInput;
+        [dialog show];
+    }
     self.huidigeGewicht.text = [[[NSString stringWithFormat:@"%.2f", gewicht]stringByReplacingOccurrencesOfString:@"." withString:@","] stringByAppendingString:@" cm"];
     self.eenheid.text = @"cm";
     [self updateDifficulty];
@@ -289,11 +311,67 @@
     [queryGewicht whereKey:@"type" equalTo:@"profiel"];
     [queryGewicht whereKey:@"Naam" equalTo:@"taille"];
     NSArray *results = [queryGewicht findObjects];
-    PFObject *object = [results objectAtIndex:0];
-    float gewicht = [[object objectForKey:@"hoeveelheid"] floatValue];
+    float gewicht = 0.0f;
+    if([results count]>0) {
+        PFObject *object = [results objectAtIndex:0];
+        gewicht = [[object objectForKey:@"hoeveelheid"] floatValue];
+        everenteredTaille = YES;
+    }
+    else {
+        UIAlertView* dialog = [[UIAlertView alloc] init];
+        [dialog setDelegate:self];
+        [dialog setMessage:@"Geef je taille in om verder te gaan"];
+        [dialog addButtonWithTitle:@"Cancel"];
+        [dialog setCancelButtonIndex:0];
+        [dialog addButtonWithTitle:@"OK"];
+        dialog.tag = 5;
+        dialog.alertViewStyle = UIAlertViewStylePlainTextInput;
+        [dialog show];
+    }
     self.huidigeGewicht.text = [[[NSString stringWithFormat:@"%.2f", gewicht]stringByReplacingOccurrencesOfString:@"." withString:@","] stringByAppendingString:@" cm"];
     self.eenheid.text = @"cm";
     [self updateDifficulty];
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if(buttonIndex==1){
+        UITextField *textField = [alertView textFieldAtIndex:0];
+        NSString *waarde = textField.text;
+        if(heupenChecked) {
+            NSString *waarde2 = [waarde stringByReplacingOccurrencesOfString:@"." withString:@","];
+            NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+            [f setNumberStyle:NSNumberFormatterDecimalStyle];
+            heupen = [f numberFromString:waarde2];
+        }
+        else if(tailleChecked) {
+            NSString *waarde2 = [waarde stringByReplacingOccurrencesOfString:@"." withString:@","];
+            NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+            [f setNumberStyle:NSNumberFormatterDecimalStyle];
+            taille = [f numberFromString:waarde2];
+        }
+        self.huidigeGewicht.text = [[waarde stringByReplacingOccurrencesOfString:@"." withString:@","] stringByAppendingString:@" cm"];
+        self.eenheid.text = @"cm";
+        [self updateDifficulty];
+    }
+    else {
+        [self GewichtCheckbox:self];
+    }if(heupenChecked && !everenteredHeupen) {
+        PFObject *updateHeupen = [PFObject objectWithClassName:login];
+        updateHeupen[@"type"] = @"profiel";
+        updateHeupen[@"Naam"] = @"heupen";
+        updateHeupen[@"hoeveelheid"] = heupen;
+        [updateHeupen saveInBackground];
+        everenteredHeupen =YES;
+    }
+    if(tailleChecked & !everenteredTaille) {
+        PFObject *updateTaille = [PFObject objectWithClassName:login];
+        updateTaille[@"type"] = @"profiel";
+        updateTaille[@"Naam"] = @"taille";
+        updateTaille[@"hoeveelheid"] = taille;
+        [updateTaille saveInBackground];
+        everenteredTaille = YES;
+    }
+
 }
 
 - (IBAction)GeenTijdCheckbox:(id)sender {

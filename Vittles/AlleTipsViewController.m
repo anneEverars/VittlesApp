@@ -138,6 +138,19 @@
     [childViewController reloadView];
 }
 
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+    UIView *bgColorView = [[UIView alloc] init];
+    bgColorView.backgroundColor = [UIColor colorWithRed:102.0/255.0 green:255.0/255.0 blue:51.0/255.0 alpha:1];
+    bgColorView.layer.cornerRadius = 7;
+    bgColorView.layer.masksToBounds = YES;
+    UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
+    [selectedCell setSelectedBackgroundView:bgColorView];
+    [self.container setHidden:FALSE];
+    TipsContainerViewController * childViewController = ((TipsContainerViewController *) self.childViewControllers.lastObject);
+    childViewController.navBar.topItem.title = selectedCell.textLabel.text;
+    [childViewController reloadView];
+}
+
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope {
     searchResults = [[NSArray alloc]init];
     NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"SELF contains[c] %@",searchText];

@@ -20,6 +20,7 @@
 
 @implementation ActivityViewController {
     NSMutableArray *activiteiten;
+    NSMutableArray *duurString;
     NSMutableArray *duur;
     NSMutableArray *energie;
     NSArray *voorgesteld;
@@ -79,7 +80,7 @@
     NSArray *results = [query findObjects];
     activiteiten = [[NSMutableArray alloc]
                     initWithObjects:@"Slapen", @"Rusten", nil];
-    duur = [[NSMutableArray alloc]initWithObjects:@"12u00", @"12u00", nil];
+    duurString = [[NSMutableArray alloc]initWithObjects:@"12u00", @"12u00", nil];
     PFQuery *queryUserGewicht = [PFQuery queryWithClassName:login];
     [queryUserGewicht whereKey:@"type" equalTo:@"profiel"];
     [queryUserGewicht whereKey:@"Naam" equalTo:@"gewicht"];
@@ -95,8 +96,11 @@
         slapen = (0.95/60*kg*720);
     }
     energie = [[NSMutableArray alloc]init];
+    duur = [[NSMutableArray alloc]init];
     [energie addObject:[NSNumber numberWithFloat:slapen]];
     [energie addObject:[NSNumber numberWithFloat:rusten]];
+    [duur addObject:[NSNumber numberWithFloat:slapen]];
+    [duur addObject:[NSNumber numberWithFloat:rusten]];
     int minSlapen = 720;
     int minRusten = 720;
     float activiteitenAantal = 0;
@@ -113,6 +117,7 @@
             minRusten -= hoeveel;
         }
         [energie addObject:[NSNumber numberWithFloat:energieAantal]];
+        [duur addObject:hoeveelheid];
         [activiteiten addObject:naam];
         int uren = hoeveel/60;
         int minU = uren*60;
@@ -120,9 +125,11 @@
         NSString *duurU = [NSString stringWithFormat:@"%02d", uren];
         NSString *duurM = [NSString stringWithFormat:@"%02d", min];
         NSString *totaleDuur = [[duurU stringByAppendingString:@"u"] stringByAppendingString:duurM];
-        [duur addObject:totaleDuur];
-        activiteitenAantal += [[result objectForKey:@"energie"] floatValue];
+        [duurString addObject:totaleDuur];
+        activiteitenAantal += [hoeveelheid floatValue];
     }
+    [duurString replaceObjectAtIndex:0 withObject:[NSNumber numberWithFloat:minSlapen]];
+    [duurString replaceObjectAtIndex:1 withObject:[NSNumber numberWithFloat:minRusten]];
     int uSlapen = (int)minSlapen/60;
     int minS = uSlapen*60;
     int slapenTijd = ((int)minSlapen - minS);
@@ -150,8 +157,8 @@
     }
     [energie replaceObjectAtIndex:0 withObject:[NSNumber numberWithFloat:slapen]];
     [energie replaceObjectAtIndex:1 withObject:[NSNumber numberWithFloat:rusten]];
-    [duur replaceObjectAtIndex:0 withObject:slaapduur];
-    [duur replaceObjectAtIndex:1 withObject:rustduur];
+    [duurString replaceObjectAtIndex:0 withObject:slaapduur];
+    [duurString replaceObjectAtIndex:1 withObject:rustduur];
     //****CALORIEMETER****
     //1. Opname
     PFQuery *queryUser = [PFQuery queryWithClassName:login];
@@ -246,7 +253,7 @@
         UILabel *activiteitName = (UILabel *)[cell viewWithTag:100];
         [activiteitName setText:[activiteiten objectAtIndex:indexPath.row]];
         UILabel *duurName = (UILabel *)[cell viewWithTag:200];
-        [duurName setText:[duur objectAtIndex:indexPath.row]];
+        [duurName setText:[duurString objectAtIndex:indexPath.row]];
         
         return cell;
     }
@@ -273,6 +280,7 @@
         childViewController.bar.topItem.title = naam;
         childViewController.hoeveelheid.text = hoeveelheid;
         childViewController.calorien = [[energie objectAtIndex:indexPath.row] floatValue];
+        childViewController.duur = [[duur objectAtIndex:indexPath.row] floatValue];
         //****RESET****
         [childViewController viewWillAppear:TRUE];
         [self.Container setHidden:FALSE];

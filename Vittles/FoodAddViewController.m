@@ -213,6 +213,9 @@
             NSString *cellText = selectedCell.textLabel.text;
             NSString *cat = [cellText stringByReplacingOccurrencesOfString: @" " withString:@"_"];
             PFQuery *query = [PFQuery queryWithClassName:cat];
+            int max = 2000;
+            [query setLimit:max];
+            [query orderByAscending:@"Naam"];
             [query selectKeys:@[@"Naam"]];
             NSArray *result = [query findObjects];
             for (PFObject *object in result) {

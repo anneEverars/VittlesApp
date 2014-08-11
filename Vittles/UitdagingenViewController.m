@@ -127,6 +127,14 @@
     }
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ExtraInfoUitdagingViewController *controller = (ExtraInfoUitdagingViewController*)[self.storyboard instantiateViewControllerWithIdentifier: @"ExtraInfoUitdaging"];
+    UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
+    NSString *naam = selectedCell.textLabel.text;
+    controller.naam = naam;
+    [self presentViewController:controller animated:YES completion:nil];
+}
+
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
     ExtraInfoUitdagingViewController *controller = (ExtraInfoUitdagingViewController*)[self.storyboard instantiateViewControllerWithIdentifier: @"ExtraInfoUitdaging"];
     UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
@@ -394,6 +402,7 @@
                         vooruitgang += 1.0f/7.0f;
                     }
                 }
+                stop = true;
             }
             if(vooruitgang>1) {
                 vooruitgang = 1;

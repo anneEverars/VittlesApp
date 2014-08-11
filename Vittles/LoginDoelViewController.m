@@ -492,13 +492,11 @@
     NSNumber *melk = [[NSNumber alloc] init];
     NSNumber *suikers = [NSNumber numberWithFloat:20.0f];
     NSNumber *rest = [NSNumber numberWithFloat:20.0f];
-    NSNumber *hoeveelheid = [[NSNumber alloc] init];
+    NSNumber *hoeveelheid = [NSNumber numberWithFloat:30.0f];
     if([self.geslacht isEqualToString:@"M"]) {
         if(year <= 12) {
-            hoeveelheid = [NSNumber numberWithFloat:2200.0f];
         }
         else if (year <= 18) {
-            hoeveelheid = [NSNumber numberWithFloat:2820.0f];
         }
         else if(year <= 50) {
             water = [NSNumber numberWithFloat:2000.0f];
@@ -507,7 +505,6 @@
             vlees = [NSNumber numberWithFloat:125.0f];
             vetten = [NSNumber numberWithFloat:50.0f];
             melk = [NSNumber numberWithFloat:500.0f];
-            hoeveelheid = [NSNumber numberWithFloat:2500.0f];
         }
         else if(year <= 70) {
             water = [NSNumber numberWithFloat:2000.0f];
@@ -516,7 +513,6 @@
             vlees = [NSNumber numberWithFloat:125.0f];
             vetten = [NSNumber numberWithFloat:45.0f];
             melk = [NSNumber numberWithFloat:530.0f];
-            hoeveelheid = [NSNumber numberWithFloat:2200.0f];
         }
         else {
             water = [NSNumber numberWithFloat:2000.0f];
@@ -525,15 +521,12 @@
             vlees = [NSNumber numberWithFloat:125.0f];
             vetten = [NSNumber numberWithFloat:40.0f];
             melk = [NSNumber numberWithFloat:670.0f];
-            hoeveelheid = [NSNumber numberWithFloat:1900.0f];
         }
     }
     else {
         if(year <= 12) {
-            hoeveelheid = [NSNumber numberWithFloat:1950.0f];
         }
         else if (year <= 18) {
-            hoeveelheid = [NSNumber numberWithFloat:2140.0f];
         }
         else if(year <= 50) {
             water = [NSNumber numberWithFloat:2000.0f];
@@ -551,7 +544,6 @@
             vlees = [NSNumber numberWithFloat:125.0f];
             vetten = [NSNumber numberWithFloat:40.0f];
             melk = [NSNumber numberWithFloat:530.0f];
-            hoeveelheid = [NSNumber numberWithFloat:2050.0f];
         }
         else {
             water = [NSNumber numberWithFloat:2000.0f];
@@ -560,7 +552,6 @@
             vlees = [NSNumber numberWithFloat:125.0f];
             vetten = [NSNumber numberWithFloat:35.0f];
             melk = [NSNumber numberWithFloat:670.0f];
-            hoeveelheid = [NSNumber numberWithFloat:2000.0f];
         }
     }
     PFObject *adh = [PFObject objectWithClassName:login];

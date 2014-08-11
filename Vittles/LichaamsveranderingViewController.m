@@ -669,9 +669,14 @@
                         [queryGewicht2 whereKey:@"updatedAt" lessThanOrEqualTo:sinds];
                         [queryGewicht2 orderByAscending:@"updatedAt"];
                         NSArray *results = [queryGewicht2 findObjects];
-                        PFObject *laatsteGewichtUpdate = [results objectAtIndex:0];
-                        NSNumber *gewichtGetal = [laatsteGewichtUpdate objectForKey:@"hoeveelheid"];
-                        [heupenAantallen replaceObjectAtIndex:0 withObject:gewichtGetal];
+                        if ([results count]> 0) {
+                            PFObject *laatsteGewichtUpdate = [results objectAtIndex:0];
+                            NSNumber *gewichtGetal = [laatsteGewichtUpdate objectForKey:@"hoeveelheid"];
+                            [heupenAantallen replaceObjectAtIndex:0 withObject:gewichtGetal];
+                        }
+                        else {
+                             [heupenAantallen replaceObjectAtIndex:0 withObject:[heupenAantallen objectAtIndex:1]];
+                        }
                     }
                     else {
                         //Ergens een getal tussenin
@@ -765,9 +770,14 @@
                         [queryGewicht2 whereKey:@"updatedAt" lessThanOrEqualTo:sinds];
                         [queryGewicht2 orderByAscending:@"updatedAt"];
                         NSArray *results = [queryGewicht2 findObjects];
-                        PFObject *laatsteGewichtUpdate = [results objectAtIndex:0];
-                        NSNumber *gewichtGetal = [laatsteGewichtUpdate objectForKey:@"hoeveelheid"];
-                        [tailleAantallen replaceObjectAtIndex:0 withObject:gewichtGetal];
+                        if ([results count]> 0) {
+                            PFObject *laatsteGewichtUpdate = [results objectAtIndex:0];
+                            NSNumber *gewichtGetal = [laatsteGewichtUpdate objectForKey:@"hoeveelheid"];
+                            [tailleAantallen replaceObjectAtIndex:0 withObject:gewichtGetal];
+                        }
+                        else {
+                            [tailleAantallen replaceObjectAtIndex:0 withObject:[tailleAantallen objectAtIndex:1]];
+                        }
                     }
                     else {
                         //Ergens een getal tussenin

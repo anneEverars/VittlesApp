@@ -621,17 +621,31 @@
         [queryGewicht whereKey:@"soort" equalTo:@"gewicht"];
         [queryGewicht whereKey:@"Naam" equalTo:@"naam"];
         NSArray *results = [queryGewicht findObjects];
-        PFObject *gewicht = [results objectAtIndex:0];
-        int aantal = [[gewicht objectForKey:@"hoeveelheid"] intValue];
-        streefgewichten = [NSArray arrayWithObjects:
-                           [NSDecimalNumber numberWithInt:aantal],
-                           [NSDecimalNumber numberWithInt:aantal],
-                           [NSDecimalNumber numberWithInt:aantal],
-                           [NSDecimalNumber numberWithInt:aantal],
-                           [NSDecimalNumber numberWithInt:aantal],
-                           [NSDecimalNumber numberWithInt:aantal],
-                           [NSDecimalNumber numberWithInt:aantal],
-                           nil];
+        if([results count] > 0){
+            PFObject *gewicht = [results objectAtIndex:0];
+            int aantal = [[gewicht objectForKey:@"hoeveelheid"] intValue];
+            streefgewichten = [NSArray arrayWithObjects:
+                               [NSDecimalNumber numberWithInt:aantal],
+                               [NSDecimalNumber numberWithInt:aantal],
+                               [NSDecimalNumber numberWithInt:aantal],
+                               [NSDecimalNumber numberWithInt:aantal],
+                               [NSDecimalNumber numberWithInt:aantal],
+                               [NSDecimalNumber numberWithInt:aantal],
+                               [NSDecimalNumber numberWithInt:aantal],
+                               nil];
+        }
+        else {
+            streefgewichten = [NSArray arrayWithObjects:
+                               [NSDecimalNumber numberWithInt:0.0f],
+                               [NSDecimalNumber numberWithInt:0.0f],
+                               [NSDecimalNumber numberWithInt:0.0f],
+                               [NSDecimalNumber numberWithInt:0.0f],
+                               [NSDecimalNumber numberWithInt:0.0f],
+                               [NSDecimalNumber numberWithInt:0.0f],
+                               [NSDecimalNumber numberWithInt:0.0f],
+                               nil];
+        }
+
     }
 }
 

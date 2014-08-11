@@ -155,7 +155,7 @@
     NSArray *activiteitenQuery = [queryActivities findObjects];
     float activiteitenAantal = 0;
     for(PFObject *result in activiteitenQuery) {
-        activiteitenAantal += [[result objectForKey:@"energie"] floatValue];
+        activiteitenAantal += [[result objectForKey:@"hoeveelheid"] floatValue];
     }
     //build up the labels
     PFQuery *queryADH = [PFQuery queryWithClassName:login];
