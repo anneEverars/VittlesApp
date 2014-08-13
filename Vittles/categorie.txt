@@ -1,11 +1,11 @@
-Vleesproducten
+Dranken
 Fruit
-Vis en schaaldieren
-Zuivelproducten
-Oli‘n en vetten
-Suikerproducten
 Graanproducten
 Groenten
-Dranken
 Gerechten
+Oli‘n en vetten
+Suikerproducten
+Vis en schaaldieren
+Vleesproducten
+Zuivelproducten
 Diversen

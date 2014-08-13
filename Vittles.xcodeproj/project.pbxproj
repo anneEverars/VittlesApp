@@ -182,7 +182,7 @@
 		1EC24058194F31FA00D8D78D /* Wheat2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EC2404F194F31FA00D8D78D /* Wheat2.png */; };
 		1EC2405B194F3AFD00D8D78D /* DetailPopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC2405A194F3AFD00D8D78D /* DetailPopoverViewController.m */; };
 		1ECD307B1902BDD600193744 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ECD307A1902BDD600193744 /* FacebookSDK.framework */; };
-		1EDE0D3018C2516300B07E09 /* Voedingtoevoegen.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDE0D2F18C2516300B07E09 /* Voedingtoevoegen.m */; };
+		1EDE0D3018C2516300B07E09 /* FoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDE0D2F18C2516300B07E09 /* FoodViewController.m */; };
 		1EE8FF6B18D4C03F0027929E /* ExtraInfoFoodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EE8FF6A18D4C03F0027929E /* ExtraInfoFoodViewController.m */; };
 		1EE9ECE01951D8EF0016B582 /* afmelden.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EE9ECDF1951D8EF0016B582 /* afmelden.png */; };
 		1EE9ECE61951DB510016B582 /* achtergrond.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EE9ECE51951DB510016B582 /* achtergrond.png */; };
@@ -616,7 +616,7 @@
 		1ECD30791902BCA300193744 /* NSNumberExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSNumberExtensions.h; sourceTree = "<group>"; };
 		1ECD307A1902BDD600193744 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		1EDE0D2E18C2516300B07E09 /* FoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodViewController.h; sourceTree = "<group>"; };
-		1EDE0D2F18C2516300B07E09 /* Voedingtoevoegen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Voedingtoevoegen.m; sourceTree = "<group>"; };
+		1EDE0D2F18C2516300B07E09 /* FoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodViewController.m; sourceTree = "<group>"; };
 		1EE8FF6918D4C03F0027929E /* ExtraInfoFoodViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtraInfoFoodViewController.h; sourceTree = "<group>"; };
 		1EE8FF6A18D4C03F0027929E /* ExtraInfoFoodViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtraInfoFoodViewController.m; sourceTree = "<group>"; };
 		1EE9ECDF1951D8EF0016B582 /* afmelden.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = afmelden.png; sourceTree = "<group>"; };
@@ -1098,7 +1098,7 @@
 				1E902B8118BE793E0084419D /* FoodAddViewController.h */,
 				1E902B8218BE793E0084419D /* FoodAddViewController.m */,
 				1EDE0D2E18C2516300B07E09 /* FoodViewController.h */,
-				1EDE0D2F18C2516300B07E09 /* Voedingtoevoegen.m */,
+				1EDE0D2F18C2516300B07E09 /* FoodViewController.m */,
 				1EE8FF6918D4C03F0027929E /* ExtraInfoFoodViewController.h */,
 				1EE8FF6A18D4C03F0027929E /* ExtraInfoFoodViewController.m */,
 				1E7C340E193530D500F3EB9D /* FlipsideViewController.h */,
@@ -1679,7 +1679,7 @@
 				1E98CB7319741E09008CC00B /* TipsContainerViewController.m in Sources */,
 				1E5A6F4B18FC255300DF1773 /* CustomCollectionCell.m in Sources */,
 				1E52E03218C6333900D489A5 /* BadgesViewController.m in Sources */,
-				1EDE0D3018C2516300B07E09 /* Voedingtoevoegen.m in Sources */,
+				1EDE0D3018C2516300B07E09 /* FoodViewController.m in Sources */,
 				1EA636351924F94E00A6197F /* UitdagingInfoViewController.m in Sources */,
 				1E330297193F57390071680F /* NotificatieViewController.m in Sources */,
 				1E87C2D918C4E3F100D29E46 /* LichaamsveranderingViewController.m in Sources */,
@@ -1869,7 +1869,7 @@
 		1E2359B718BA50EE00716B92 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Vittles";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1896,7 +1896,7 @@
 		1E2359B818BA50EE00716B92 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Vittles";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (

@@ -122,6 +122,7 @@
     geselecteerdeSoort = cellText;
     NSString *naam = self.ItemLabel.text;
     NSString *cat = [self.type stringByReplacingOccurrencesOfString: @" " withString:@"_"];
+    cat = [cat stringByReplacingOccurrencesOfString: @"ë" withString:@"_"];
     PFQuery *query = [PFQuery queryWithClassName:cat];
     [query whereKey:@"Naam" equalTo:naam];
     [query whereKey:@"Soort" equalTo:cellText];
@@ -149,6 +150,7 @@
 - (IBAction)VoegToe:(id)sender {
     NSString *soort = [self.soorten objectAtIndex:[self.soortenPicker selectedRowInComponent:0]];
     NSString *cat = [self.type stringByReplacingOccurrencesOfString: @" " withString:@"_"];
+    cat = [cat stringByReplacingOccurrencesOfString: @"ë" withString:@"_"];
     PFQuery *query = [PFQuery queryWithClassName:cat];
     NSString *naamItem = self.ItemLabel.text;
     NSString *naamDB = naamItem;

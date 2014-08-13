@@ -51,6 +51,7 @@
     momenten = [[NSArray alloc]
                          initWithObjects:@"Ontbijt", @"Tussendoortje", @"Middagmaal", @"Vieruurtje", @"Avondmaal", nil];
     //****CATEGORIEN****
+    [self.Categorien setHidden:TRUE];
     self.Categorien.delegate = self;
     self.Categorien.dataSource = self;
     self.Categorien.layer.transform = CATransform3DRotate(CATransform3DIdentity,-1.57079633,0,0,1);
@@ -86,6 +87,7 @@
     allFoodItems = [[NSMutableArray alloc]init];
     for(NSString *categorie in categories) {
         NSString *cat = [categorie stringByReplacingOccurrencesOfString: @" " withString:@"_"];
+        cat = [cat stringByReplacingOccurrencesOfString: @"ë" withString:@"_"];
         PFQuery *query = [PFQuery queryWithClassName:cat];
         [query selectKeys:@[@"Naam"]];
         NSArray *result = [query findObjects];
@@ -207,11 +209,13 @@
     [selectedCell setSelectedBackgroundView:bgColorView];
     if(self.Momenten==tableView) {
         moment = selectedCell.textLabel.text;
+        [self.Categorien setHidden:FALSE];
     }
     if(self.Categorien==tableView){
             elementen = [[NSMutableArray alloc]init];
             NSString *cellText = selectedCell.textLabel.text;
             NSString *cat = [cellText stringByReplacingOccurrencesOfString: @" " withString:@"_"];
+            cat = [cat stringByReplacingOccurrencesOfString: @"ë" withString:@"_"];
             PFQuery *query = [PFQuery queryWithClassName:cat];
             int max = 2000;
             [query setLimit:max];
@@ -244,6 +248,7 @@
         NSArray *result;
         for(NSString *types in CategoryLabel){
             NSString *cat = [types stringByReplacingOccurrencesOfString: @" " withString:@"_"];
+            cat = [cat stringByReplacingOccurrencesOfString: @"ë" withString:@"_"];
             PFQuery *query = [PFQuery queryWithClassName:cat];
             [query whereKey:@"Naam" equalTo:cellText];
             result = [query findObjects];

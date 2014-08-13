@@ -107,7 +107,7 @@
         self.label.text = [gebruikt stringByAppendingString:@"%"];
         //****ENERGIEWAARDE****
         if([self.soort length] != 0) {
-            PFQuery *query = [PFQuery queryWithClassName:[self.soort stringByReplacingOccurrencesOfString: @" " withString:@"_"]];
+            PFQuery *query = [PFQuery queryWithClassName:[[self.soort stringByReplacingOccurrencesOfString: @" " withString:@"_"]stringByReplacingOccurrencesOfString:@"ë" withString:@"_"]];
             [query whereKey:@"Naam" equalTo:self.naam];
             if(self.type) {
                 [query whereKey:@"Soort" equalTo:self.type];
@@ -129,6 +129,4 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
-
 @end
