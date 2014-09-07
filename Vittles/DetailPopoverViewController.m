@@ -80,6 +80,7 @@
         PFQuery *query2 = [PFQuery queryWithClassName:login];
         [query2 whereKey:@"type" equalTo:@"food"];
         [query2 whereKey:@"soort" equalTo:@"Groenten"];
+        [query2 whereKey:@"updatedAt" greaterThanOrEqualTo:dateOnly];
         NSArray *results2 = [query2 findObjects];
         for(PFObject *result in results2) {
             NSString *naam = [result objectForKey:@"Naam"];
@@ -117,6 +118,7 @@
         PFQuery *query2 = [PFQuery queryWithClassName:login];
         [query2 whereKey:@"type" equalTo:@"food"];
         [query2 whereKey:@"soort" equalTo:@"Vis en schaaldieren"];
+        [query2 whereKey:@"updatedAt" greaterThanOrEqualTo:dateOnly];
         NSArray *results2 = [query2 findObjects];
         for(PFObject *result in results2) {
             NSString *naam = [result objectForKey:@"Naam"];

@@ -170,6 +170,7 @@
         else {
             [queryGewicht whereKey:@"Naam" equalTo:@"taille"];
         }
+        [queryGewicht orderByDescending:@"updatedAt"];
         NSArray *results = [queryGewicht findObjects];
         PFObject *object = [results objectAtIndex:0];
         float aantalNu = [[object objectForKey:@"hoeveelheid"] floatValue];
@@ -224,6 +225,7 @@
     float aantalEenheden = [self.aantal selectedRowInComponent:0];
     float aantalKomma = [self.aantalKomma selectedRowInComponent:0];
     float aantalDoel = aantalEenheden+(aantalKomma/100);
+    [queryGewicht orderByDescending:@"updatedAt"];
     NSArray *results = [queryGewicht findObjects];
     PFObject *object = [results objectAtIndex:0];
     float aantalNu = [[object objectForKey:@"hoeveelheid"] floatValue];

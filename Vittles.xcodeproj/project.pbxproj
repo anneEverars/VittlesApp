@@ -110,7 +110,6 @@
 		1E681A3018F2C64D00AD5DAA /* UitdagingenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E681A2F18F2C64D00AD5DAA /* UitdagingenViewController.m */; };
 		1E681A5B18F2F2B800AD5DAA /* CERoundProgressLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E681A4418F2F2B800AD5DAA /* CERoundProgressLayer.m */; };
 		1E681A5C18F2F2B800AD5DAA /* CERoundProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E681A4618F2F2B800AD5DAA /* CERoundProgressView.m */; };
-		1E681A7118F2FF1500AD5DAA /* CEPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E681A7018F2FF1500AD5DAA /* CEPlayer.m */; };
 		1E681A7D18F309DD00AD5DAA /* progressCircle.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E681A7C18F309DD00AD5DAA /* progressCircle.png */; };
 		1E7C3410193530D500F3EB9D /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E7C340F193530D500F3EB9D /* FlipsideViewController.m */; };
 		1E7C341619360DAE00F3EB9D /* FlipsideActiviteitenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E7C341519360DAE00F3EB9D /* FlipsideActiviteitenViewController.m */; };
@@ -435,8 +434,6 @@
 		1E681A4418F2F2B800AD5DAA /* CERoundProgressLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CERoundProgressLayer.m; path = "CERoundProgressView-master/RoundProgress/CERoundProgressLayer.m"; sourceTree = "<group>"; };
 		1E681A4518F2F2B800AD5DAA /* CERoundProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CERoundProgressView.h; path = "CERoundProgressView-master/RoundProgress/CERoundProgressView.h"; sourceTree = "<group>"; };
 		1E681A4618F2F2B800AD5DAA /* CERoundProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CERoundProgressView.m; path = "CERoundProgressView-master/RoundProgress/CERoundProgressView.m"; sourceTree = "<group>"; };
-		1E681A6F18F2FF1500AD5DAA /* CEPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CEPlayer.h; sourceTree = "<group>"; };
-		1E681A7018F2FF1500AD5DAA /* CEPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CEPlayer.m; sourceTree = "<group>"; };
 		1E681A7C18F309DD00AD5DAA /* progressCircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = progressCircle.png; sourceTree = "<group>"; };
 		1E7C340E193530D500F3EB9D /* FlipsideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipsideViewController.h; sourceTree = "<group>"; };
 		1E7C340F193530D500F3EB9D /* FlipsideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipsideViewController.m; sourceTree = "<group>"; };
@@ -1135,8 +1132,6 @@
 			children = (
 				1E951833194A00D300280AE5 /* Doel */,
 				1EA636391925621900A6197F /* Uitdagingen */,
-				1E681A6F18F2FF1500AD5DAA /* CEPlayer.h */,
-				1E681A7018F2FF1500AD5DAA /* CEPlayer.m */,
 				1EFD18461981439A00C35582 /* Badges */,
 			);
 			name = Doelstellingen;
@@ -1715,7 +1710,6 @@
 				1E52E02C18C6330000D489A5 /* DoelenViewController.m in Sources */,
 				1E87C2B818C4C3B400D29E46 /* ActivityViewController.m in Sources */,
 				1EE9ECF319533DE20016B582 /* GebeurtenissenTableViewCell.m in Sources */,
-				1E681A7118F2FF1500AD5DAA /* CEPlayer.m in Sources */,
 				1E681A5C18F2F2B800AD5DAA /* CERoundProgressView.m in Sources */,
 				1E87C2BB18C4C8A800D29E46 /* ActivityAddViewController.m in Sources */,
 				1E902B4918BE374F0084419D /* ECSlidingViewController.m in Sources */,

@@ -224,7 +224,7 @@
     tailleChecked = YES;
     self.huidigeStatus.text = @"Je huidige taille-omtrek :";
     if(self.taille > 0) {
-        float tailleFloat = [self.heupen floatValue];
+        float tailleFloat = [self.taille floatValue];
         self.huidigeGewicht.text = [[[NSString stringWithFormat:@"%.2f", tailleFloat] stringByReplacingOccurrencesOfString:@"." withString:@","] stringByAppendingString:@" cm"];
         self.eenheid.text = @"cm";
         [self updateDifficulty];
@@ -346,14 +346,14 @@
         updateGewicht[@"hoeveelheid"] = self.gewicht;
         [updateGewicht saveInBackground];
         //3. Eventueel taille of heupen
-        if(heupenChecked) {
+        if(self.heupen>0) {
             PFObject *updateHeupen = [PFObject objectWithClassName:login];
             updateHeupen[@"type"] = @"profiel";
             updateHeupen[@"Naam"] = @"heupen";
             updateHeupen[@"hoeveelheid"] = self.heupen;
             [updateHeupen saveInBackground];
         }
-        if(tailleChecked) {
+        if(self.taille>0) {
             PFObject *updateTaille = [PFObject objectWithClassName:login];
             updateTaille[@"type"] = @"profiel";
             updateTaille[@"Naam"] = @"taille";
@@ -535,7 +535,6 @@
             vlees = [NSNumber numberWithFloat:125.0f];
             vetten = [NSNumber numberWithFloat:45.0f];
             melk = [NSNumber numberWithFloat:480.0f];
-            hoeveelheid = [NSNumber numberWithFloat:2000.0f];
         }
         else if(year <= 70) {
             water = [NSNumber numberWithFloat:2000.0f];
